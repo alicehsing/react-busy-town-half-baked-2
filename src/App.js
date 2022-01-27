@@ -12,7 +12,23 @@ function App() {
   // alienSize should be a number that starts out as 10
   const [alienSize, setAlienSize] = useState(10);
   // traffic is complicated. It should be an array of strings that starts out as ['car', 'truck']
-  const [vehicleArray, setVehicleArray] = useState(['car', 'truck', 'bus', 'motorcycle']);
+  const [traffic, setTrafficArray] = useState(['car', 'truck', 'bus', 'motorcycle']);
+
+  function handleAddCar() {
+    setTrafficArray([...traffic, 'car']);
+  }
+
+  function handleAddBus() {
+    setTrafficArray([...traffic, 'bus']);
+  }
+
+  function handleAddTruck() {
+    setTrafficArray([...traffic, 'truck']);
+  }
+
+  function handleAddMotorcycle() {
+    setTrafficArray([...traffic, 'motorcycle']);
+  }
 
   return (
     <div className="App">
@@ -57,17 +73,17 @@ function App() {
       This prop should be an array of strings like ['car', 'truck', 'truck', 'car', 'bus'].
       Do you have something like that in state that you could pass as a vehicles prop? 
       */}
-      <VehicleList vehicle={vehicleArray} />
+      <VehicleList traffic={traffic} />
       <div className='buttons'>
         {/* This part is weird */}
         {/* On click, you should set the traffic in state to be a copy of the same array that's already in state, but immutably add a 'car' to the end */}
-        <button>Car</button>
+        <button onClick={handleAddCar}>Car</button>
         {/* On click, you should set the traffic in state to be a copy of the same array that's already in state, but immutably add a 'bus' to the end */}
-        <button>Bus</button>
+        <button onClick={handleAddBus}>Bus</button>
         {/* On click, you should set the traffic in state to be a copy of the same array that's already in state, but immutably add a 'truck' to the end */}
-        <button>Truck</button>
+        <button onClick={handleAddTruck}>Truck</button>
         {/* On click, you should set the traffic in state to be a copy of the same array that's already in state, but immutably add a 'motorcycle' to the end */}
-        <button>Motorcycle</button>
+        <button onClick={handleAddMotorcycle}>Motorcycle</button>
       </div>
 
     </div>
