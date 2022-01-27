@@ -3,6 +3,8 @@ import { useState } from 'react';
 import VehicleList from './VehicleList';
 import TrafficLight from './TrafficLight';
 
+
+
 function App() {
   // track the following state with a few useState hooks:
   // lightColor should be a string that starts out as 'red'
@@ -31,7 +33,9 @@ function App() {
   }
 
   return (
+
     <div className="App">
+      <h1>Welcome to Busy Town!</h1>
       <div className="fight">
         <div className="monster">
           {/* the width of the alien should be ten times whatever the alien size is in state */}
@@ -40,6 +44,7 @@ function App() {
           <div className='buttons'>
             {/* when you click this button, the alien's size in state should go up by one */}
             <button onClick={() => setAlienSize(alienSize + 1)}>Oh no! The alien is gobblin up all the electricity!</button>
+            <hr></hr>
             {/* when you click this button, the lizard's size in state should go down by one */}
             <button onClick={() => setLizardSize(lizardSize - 1)} >Amazing! The alien zapped the lizard!</button>
           </div>
@@ -52,6 +57,7 @@ function App() {
   
             {/* when you click this button, the lizard's size in state should go up by one */}
             <button onClick={() => setLizardSize(lizardSize + 1)}>Yegads! The lizard is ramping up to its final form!</button>
+            <hr></hr>
             {/* when you click this button, the alien's size in state should go up by one */}
             <button onClick={() => setAlienSize(alienSize - 1)}>Oh my! The lizard chomped down on the alien!</button>
           </div>
